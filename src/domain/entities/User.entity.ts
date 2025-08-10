@@ -1,0 +1,6 @@
+export default class User {
+  name: string;
+  constructor(props: { name: string }) {
+    this.name = props.name;
+  }
+}

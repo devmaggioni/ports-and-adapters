@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "es2022",
+    "types": ["node"],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "isolatedModules": true,
+    //"verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "@adapters/*": ["./adapters/*"],
+      "@usecases/*": ["./application/usecases/*"],
+      "@domain/*": ["./domain/*"],
+      "@database/*": ["./infra/database/*"],
+      "@contracts/*": ["./application/contracts/*"]
+    }
+  }
+}
