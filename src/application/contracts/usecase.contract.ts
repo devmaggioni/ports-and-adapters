@@ -1,6 +1,11 @@
-import User from "@domain/entities/User.entity";
 import { Either } from "@devmaggioni/either-monad";
 
-export default interface IUsecase {
-  create(user: User): Promise<Either<any, any>>;
+export default abstract class IUsecase {
+  readonly repo: unknown;
+
+  constructor(repo: unknown) {
+    this.repo = repo;
+  }
+
+  abstract create(data: unknown): Promise<Either<any, any>>;
 }

@@ -1,6 +1,8 @@
+import NameVO from "@domain/value-objects/name.vo";
+
 export default class User {
-  name: string;
-  constructor(props: { name: string }) {
+  name: NameVO;
+  constructor(props: { name: NameVO }) {
     this.name = props.name;
   }
 }

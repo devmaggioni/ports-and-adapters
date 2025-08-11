@@ -8,9 +8,10 @@ import { errorHandler } from "../middlewares/errorHandler";
 import { logger } from "@devmaggioni/either-monad";
 import IController from "@contracts/controller.contract";
 import IUsecase from "@contracts/usecase.contract";
+import NameVO from "@domain/value-objects/name.vo";
 
 export default class UserController implements IController {
-  private usecase: IUsecase;
+  readonly usecase: IUsecase;
 
   constructor(usecase: IUsecase) {
     this.usecase = usecase;
@@ -26,7 +27,7 @@ export default class UserController implements IController {
       });
 
     const user = new User({
-      name,
+      name: NameVO.create(name),
     });
 
     const data = await this.usecase.create(user);

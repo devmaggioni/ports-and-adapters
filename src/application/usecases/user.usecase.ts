@@ -1,11 +1,11 @@
 import User from "@domain/entities/User.entity";
-import UserRepository from "adapters/out/repositories/user.repository";
 import { Either, logger } from "@devmaggioni/either-monad";
 import IUsecase from "@contracts/usecase.contract";
+import IRepository from "@contracts/repository.contract";
 
 export default class UserUseCase implements IUsecase {
-  private repo: UserRepository;
-  constructor(userRepo: UserRepository) {
+  readonly repo: IRepository;
+  constructor(userRepo: IRepository) {
     this.repo = userRepo;
   }
 

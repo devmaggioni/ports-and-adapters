@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon",
+    "test": "jest --passWithNoTests",
     "build": "tsc && tsc-alias",
     "migrate": "npx prisma migrate dev --schema=src/infra/database/prisma/schema.prisma",
     "start": "node dist/index"
@@ -13,8 +14,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.2.1",
+    "jest": "^30.0.5",
     "nodemon": "^3.1.10",
+    "ts-jest": "^29.4.1",
     "tsc-alias": "^1.8.16",
     "typescript": "^5.9.2"
   },
